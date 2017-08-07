@@ -1,0 +1,27 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* Let's get this party started */
+::-webkit-scrollbar {
+    width: 12px;
+		height:12px;
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+		outline: #ffffff;
+		background: #1E1E1E;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    background: #C7000C;
+}
+::-webkit-scrollbar-thumb:window-inactive {
+		background: #C7000C;
+}
