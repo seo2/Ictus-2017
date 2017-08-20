@@ -3,8 +3,12 @@
 function iniciarTema(){
     // ACTIVA IMAGENES DESTACADAS  
     add_theme_support( 'post-thumbnails' );
-    add_image_size('preview_programacion', 400, 289, true);
-    add_image_size('preview_galerias', 650, 650, true);
+	add_image_size('slider-home', 1170, 400, true);
+	add_image_size('slider-home2', 1600, 600, true);
+	add_image_size('destacado-home', 290, 220, true);
+	add_image_size('noticias', 580, 300, true);
+	
+		
 
     // Activar Titulo 
     add_theme_support( 'title-tag' );
@@ -55,6 +59,9 @@ function theme_js(){
 	wp_enqueue_script('ajustar_menu-js', get_template_directory_uri() . '/assets/js/ajustar_menu.js', array('jquery'),'1', true);
 	wp_enqueue_script('jquery.easing', get_template_directory_uri() . '/assets/js/jquery.easing.min.js', array('jquery'),'1', true);
 	wp_enqueue_script('scroll-js', get_template_directory_uri() . '/assets/js/scroll.js', array('jquery'),'1.7', true);
+	wp_enqueue_script( 'undersocre', 'https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js', array('jquery'), '1.8.3', true );
+	wp_enqueue_script( 'moment', get_template_directory_uri() . '/assets/js/moment-with-locales.js', array('jquery'), '3.0', true );
+	wp_enqueue_script( 'clndr', get_template_directory_uri() . '/assets/js/clndr.js', array('jquery'), '3.3', true );
 	wp_enqueue_script('init-js', get_template_directory_uri() . '/assets/js/init.js', array('jquery'),'1.8.5', true);
 }	
   add_action('wp_enqueue_scripts', 'theme_styles');

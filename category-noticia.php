@@ -39,8 +39,7 @@
 				<div class="col l4 m4">
 					<div class="post_noticia">
 						<a href="<?php the_permalink(); ?>" target="_self" class="img_link">
-							<img src="<?php bloginfo('template_url'); ?>/assets/img/noticia_01.jpg" class="responsive-img"/>
-							
+							<?php the_post_thumbnail('noticias', array( 'class' => 'responsive-img' ) ); ?>
 						</a><!-- proporción 580x300 -->
 						<div class="section">
 							<p><?php echo get_the_date(); ?></p>
@@ -67,14 +66,14 @@
 			
 			<div>
 				<ul class="pagination center">
-			    <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-			    <li class="active"><a href="#!">1</a></li>
-			    <li class="waves-effect"><a href="#!">2</a></li>
-			    <li class="waves-effect"><a href="#!">3</a></li>
-			    <li class="waves-effect"><a href="#!">4</a></li>
-			    <li class="waves-effect"><a href="#!">5</a></li>
-			    <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
-			  </ul>
+				    <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+				    <li class="active"><a href="#!">1</a></li>
+				    <li class="waves-effect"><a href="#!">2</a></li>
+				    <li class="waves-effect"><a href="#!">3</a></li>
+				    <li class="waves-effect"><a href="#!">4</a></li>
+				    <li class="waves-effect"><a href="#!">5</a></li>
+				    <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+				</ul>
 			</div>
 			
 		</div><!-- /.container -->

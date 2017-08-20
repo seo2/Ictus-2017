@@ -35,7 +35,7 @@ a {
 
 @media only screen and (min-width: 993px) {
   .container {
-    width: 90%;
+    width: 1170px;
   }
 }
 
@@ -893,10 +893,6 @@ footer {
 }
 */
 
-.bg_gray {
-	background: #1e1e1e;
-}
-
 @media only screen and (max-width: 600px) {
 	footer {
 		min-height: 400px;
@@ -1719,7 +1715,7 @@ a.img_link img:hover {
 }
 
 .divider_footer {
-	background: #656565;
+	background: #353535 !important;
 }
 
 .txt_footer {
@@ -2206,3 +2202,230 @@ a.img_link img:hover {
 .interior .video-container iframe {
 	margin: 15px;
 }
+
+/**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
+
+.parallax-container {
+  min-height: 380px;
+  line-height: 0;
+  height: auto;
+}
+
+.parallax-container .section {
+  width: 100%;
+}
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+}
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+  
+  .parallax-container {
+    min-height: 200px;
+    line-height: 0;
+    height: auto;
+  }
+  
+  .parallax-container .section {
+    width: 50%;
+  }
+}
+
+/**/
+
+.bg_grey {
+	background: #1e1e1e;
+}
+
+.padding_bottom100 {
+	padding-bottom: 100px;;
+}
+
+.padding100 {
+	padding: 100px 0;
+}
+
+.txt_blanco {
+	color: #ffffff;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	font-size: 14px;
+	line-height: 20px;
+	text-align: justify;
+/* 	margin: 15px; */
+}
+
+.txt_blanco strong {
+	font-weight: 700;
+	color: #C7000C;
+}
+
+
+/* CLNDR */
+#mini-clndr { font-family: 'Lato', sans-serif; margin: 0 auto; width: 100%;  background: transparent;}
+#mini-clndr .clndr { overflow: hidden;}
+#mini-clndr .clndr .controls { color: #fff; font-size: 22px; }
+	
+#mini-clndr .clndr .controls .clndr-previous-button, #mini-clndr .clndr .controls .clndr-next-button {
+    font-family: 'Lato', sans-serif;
+    width: 15%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-transition: background-color 0.5s;
+    -moz-transition: background-color 0.5s;
+    -ms-transition: background-color 0.5s;
+    -o-transition: background-color 0.5s;
+    transition: background-color 0.5s;
+    font-size: 30px;
+}
+
+#mini-clndr .clndr .controls .month {
+    font-family: 'Lato', sans-serif;
+    width: 70%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: inline-block;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#mini-clndr .clndr .days-container {
+    position: relative;
+    width: 100%;
+    height: 292px;
+    display: inline-block;
+}
+#mini-clndr .clndr .days-container .days {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 292px;
+    -webkit-transition: left 0.5s;
+    -moz-transition: left 0.5s;
+    -ms-transition: left 0.5s;
+    -o-transition: left 0.5s;
+    transition: left 0.5s;
+}
+
+#mini-clndr .clndr .days-container .days .headers { padding-top: 5px; padding-bottom: 5px;  text-transform: uppercase;}
+
+#mini-clndr .clndr .days-container .days .day.adjacent-month, #mini-clndr .clndr .days-container .days .empty.adjacent-month { color: rgba(0, 0, 0, 0.3); }
+#mini-clndr .clndr .days-container .days .day, #mini-clndr .clndr .days-container .days .empty {
+    width: 14%;
+    display: inline-block;
+    padding-top: 8px;
+    padding-bottom: 10px;
+    font-size: 15px;
+    text-align: center;
+    color: #fff;
+    border-top: solid 3px #fff;
+    min-height: 28px;
+}
+#mini-clndr .clndr .days-container .days .day.event, #mini-clndr .clndr .days-container .days .empty.event {
+	background: #C7000C;
+	color: #fff;
+    -webkit-transition: background-color 0.5s;
+    -moz-transition: background-color 0.5s;
+    -ms-transition: background-color 0.5s;
+    -o-transition: background-color 0.5s;
+    transition: background-color 0.5s;
+    cursor: pointer;
+}
+
+#mini-clndr .clndr .days-container .events {
+    position: absolute;
+    left: 200%;
+    width: 100%;
+    height: 370px;
+    -webkit-transition: left 0.5s;
+    -moz-transition: left 0.5s;
+    -ms-transition: left 0.5s;
+    -o-transition: left 0.5s;
+    transition: left 0.5s;
+    background-color: #fff;
+}
+
+#mini-clndr .clndr .days-container .events .headers {
+    position: relative;
+}
+
+#mini-clndr .clndr .days-container .days .headers .day-header {
+    width:  14%;
+    display: inline-block;
+    text-align: center;
+}
+
+#mini-clndr .clndr .days-container .events .x-button {
+    position: absolute;
+    font-size: 80%;
+    top: 7px;
+    left: 20px;
+    cursor: pointer;
+    -webkit-transition: color 0.25s;
+    -moz-transition: color 0.25s;
+    -ms-transition: color 0.25s;
+    -o-transition: color 0.25s;
+    transition: color 0.25s;
+    color: #fff;
+}
+
+
+
+#mini-clndr .clndr .days-container .events .event-header {
+    width: 100%;
+    background-color: #C7000C;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    color: white;
+}
+
+#mini-clndr .clndr .days-container .events .events-list {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 245px;
+}
+
+#mini-clndr .clndr .days-container .events .events-list .event {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    -webkit-transition: background-color 0.25s;
+    -moz-transition: background-color 0.25s;
+    -ms-transition: background-color 0.25s;
+    -o-transition: background-color 0.25s;
+    transition: background-color 0.25s;
+}
+
+#mini-clndr .clndr .days-container .events .events-list .event a {
+    position: relative;
+    font-size: 12px;
+    letter-spacing: 1px;
+    background-color: transparent;
+    color: #212121;
+    text-decoration: none;
+    -webkit-transition: color 0.25s;
+    -moz-transition: color 0.25s;
+    -ms-transition: color 0.25s;
+    -o-transition: color 0.25s;
+    transition: color 0.25s;
+}
+#mini-clndr .clndr .days-container.show-events .events { left: 0;}

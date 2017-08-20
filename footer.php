@@ -6,7 +6,7 @@
 				  <div class="col l12 m12">
 						<div class="txt_footer">
 							<strong>Teatro ICTUS</strong> sala <strong>La Comedia</strong><br> 
-				      Merced 349 - Barrio Lastarria<br>
+							Merced 349 - Barrio Lastarria<br>
 							Reservas: <strong>+56 2 2 639 1523 / +56 2 2 639 2101</strong><br><br>
 							A pasos de <strong>Metro Universidad Católica</strong> y <br> <strong>Metro Bellas Artes.</strong><br> Estacionamiento a 50 mts.
 						</div>
