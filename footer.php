@@ -1,4 +1,4 @@
-  <footer class="bg_gray">
+  <footer class="bg_grey">
 	  <div class="container">
 			<div class="divider divider_footer"></div>
 		  <div class="section">
