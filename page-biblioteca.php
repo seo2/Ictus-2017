@@ -39,10 +39,10 @@
 		  <div class="ajustar_menu">
 		  	<nav role="navigation" class="menu">
 		      <div class="nav-wrapper container">
-		        <a id="logo-container" href="index.html" class="brand-logo left"><img src="assets/img/logo_ictus_horizontal.png" class="retina" alt="Teatro Ictus"/></a>
+		        <a id="logo-container" href="<?php bloginfo('url'); ?>" class="brand-logo left"><img src="assets/img/logo_ictus_horizontal.png" class="retina" alt="Teatro Ictus"/></a>
 		        
 		        <ul class="right hide-on-med-and-down">
-	          	<li><a href="index.html" target="_self" class="">Portada</a></li>
+	          	<li><a href="<?php bloginfo('url'); ?>" target="_self" class="">Portada</a></li>
 	          	<li><a href="cartelera.html" target="_self" class="">Cartelera</a></li>
 	          	<li><a href="noticias.html" target="_self" class="">Noticias</a></li>
 	          	<li><a href="historia.html" target="_self" class="">Historia</a></li>
@@ -58,7 +58,7 @@
 		        
 		        <ul id="nav-mobile" class="side-nav">
 			        <li><img src="assets/img/logo_ictus_gray.png" width="78" height="50" style="margin: 40px 0 20px 0" alt="Teatro Ictus"/></li>
-		          <li><a href="index.html" target="_self" class="">Portada</a></li>
+		          <li><a href="<?php bloginfo('url'); ?>" target="_self" class="">Portada</a></li>
 	          	<li><a href="cartelera.html" target="_self" class="">Cartelera</a></li>
 	          	<li><a href="noticias.html" target="_self" class="">Noticias</a></li>
 	          	<li><a href="historia.html" target="_self" class="">Historia</a></li>

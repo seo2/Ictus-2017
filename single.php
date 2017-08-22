@@ -15,39 +15,32 @@
 				</div><!-- ./row -->
 			</div><!-- /.section -->
 
-			<div class="section">
-				<div class="row">
-					<form class="col l6 offset-l3 s12" action="#">
-  					<div class="busqueda">
-              <div class="input-field">
-                <input placeholder="Tu Búsqueda de Noticias" id="" type="text">
-              </div>
-              <button class="btn_busqueda" type="submit" name="action"><i class="fa fa-search" aria-hidden="true"></i></button>
-            </div><!-- /.busqueda -->
-					</form>
-				</div><!-- /.row -->
-			</div><!-- /.section -->
+			<?php include('include-search.php'); ?>
 			
 	        <?php if (have_posts()) : ?>
 			<?php while (have_posts()) : the_post(); ?>
+			<?php 
+				$elid 		= get_the_id();
+				$exclude_ids = array($elid);
+					
+			?>
 			<div class="section">
 				<div class="row">
 				<div class="col l10 offset-l1 s12">
 					<div class="post_noticia_interior">
+						
 						<div id="owl-demo" class="owl-carousel">
 							<div class="item banner_item">
-							  <img src="<?php bloginfo('template_url'); ?>/assets/img/banner_edgardo_bruna.jpg" class="responsive-img"/><!-- proporción 1600x600 -->
+								<?php the_post_thumbnail('noticias', array( 'class' => 'responsive-img' ) ); ?>
 							</div><!-- /.banner_item -->
-		
+					        <?php $imagenes = muestra_galeria(); ?>
+							<?php foreach ($imagenes as $imagen): ?>
 							<div class="item banner_item">
-							  <img src="<?php bloginfo('template_url'); ?>/assets/img/banner_edgardo_bruna.jpg" class="responsive-img"/><!-- proporción 1600x600 -->
+								<img src="<?php echo wp_get_attachment_url($imagen->ID); ?>" class="responsive-img"/>
 							</div><!-- /.banner_item -->
-							
-							<div class="item banner_item">
-							  <img src="<?php bloginfo('template_url'); ?>/assets/img/banner_edgardo_bruna.jpg" class="responsive-img"/><!-- proporción 1600x600 -->
-							</div><!-- /.banner_item -->
-							
+							<?php endforeach ?> 
 						</div><!-- /owl-demo -->
+						
 						<div class="section">
 							<p><?php echo get_the_date(); ?></p>
 							<h5><?php the_title(); ?></h5>
@@ -80,41 +73,33 @@
 			
 			
 			<div class="row">
-				<div class="col l4 m4">
-					<div class="post_noticia">
-						<a href="noticia.html" target="_self" class="img_link"><img src="<?php bloginfo('template_url'); ?>/assets/img/noticia_01.jpg" class="responsive-img"/></a><!-- proporción 580x300 -->
-						<div class="section">
-							<p>Enero 1 de 2017</p>
-							<h5><a href="noticia.html" target="_self">SALA LA COMEDIA SERÁ SEDE DE LA SEGUNDA EDICIÓN DEL ENCUENTRO FRONTERIZO</a></h5><!-- limitar a 70 caracteres -->
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elementum dui sapien, non volutpat sem viverra vel. Donec eu nunc ac enim metus.</p><!-- limitar a 140 caracteres -->
-							<p><a href="noticia.html" target="_self">Continuar leyendo...</a></p>
-						</div><!-- /.section -->
-					</div><!-- /.post_noticia -->
-				</div><!-- /.col -->
+			<?php	                                         
+			    $args = array(
+					'category_name'  => 'noticia',
+					'posts_per_page' => 3,
+					'orderby'		 => 'rand',
+					'post__not_in'   => $exclude_ids
+ 			    );
+				$the_query = new WP_Query ($args);
+				
+			    if ( have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post();
+			?> 				
 				
 				<div class="col l4 m4">
 					<div class="post_noticia">
-						<a href="" target="_self" class="img_link"><img src="<?php bloginfo('template_url'); ?>/assets/img/noticia_01.jpg" class="responsive-img"/></a><!-- proporción 580x300 -->
+						<a href="<?php the_permalink(); ?>" target="_self" class="img_link">
+							<?php the_post_thumbnail('noticias', array( 'class' => 'responsive-img' ) ); ?>
+						</a><!-- proporción 580x300 -->
 						<div class="section">
-							<p>Enero 1 de 2017</p>
-							<h5><a href="" target="_self">SALA LA COMEDIA SERÁ SEDE DE LA SEGUNDA EDICIÓN DEL ENCUENTRO FRONTERIZO</a></h5><!-- limitar a 70 caracteres -->
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elementum dui sapien, non volutpat sem viverra vel. Donec eu nunc ac enim metus.</p><!-- limitar a 140 caracteres -->
-							<p><a href="#" target="_self">Continuar leyendo...</a></p>
+							<p><?php echo get_the_date(); ?></p>
+							<h5><a href="<?php the_permalink(); ?>" target="_self"><?php the_title(); ?></a></h5><!-- limitar a 70 caracteres -->
+							<p><?php the_excerpt(); ?></p><!-- limitar a 140 caracteres -->
+							<p><a href="<?php the_permalink(); ?>" target="_self">Continuar leyendo...</a></p>
 						</div><!-- /.section -->
 					</div><!-- /.post_noticia -->
 				</div><!-- /.col -->
-				
-				<div class="col l4 m4">
-					<div class="post_noticia">
-						<a href="" target="_self" class="img_link"><img src="<?php bloginfo('template_url'); ?>/assets/img/noticia_01.jpg" class="responsive-img"/></a><!-- proporción 580x300 -->
-						<div class="section">
-							<p>Enero 1 de 2017</p>
-							<h5><a href="" target="_self">SALA LA COMEDIA SERÁ SEDE DE LA SEGUNDA EDICIÓN DEL ENCUENTRO FRONTERIZO </a></h5><!-- limitar a 72 caracteres -->
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elementum dui sapien, non volutpat sem viverra vel. Donec eu nunc ac enim metus.</p><!-- /.140 caracteres -->
-							<p><a href="#" target="_self">Continuar leyendo...</a></p>
-						</div><!-- /.section -->
-					</div><!-- /.post_noticia -->	
-				</div><!-- /.col -->
+				<?php endwhile; else: ?>
+				<?php endif; ?>        				
 			</div><!-- ./row -->
 			
 		</div><!-- /.container -->

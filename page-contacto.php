@@ -44,24 +44,24 @@ Estacionamiento a 50 mts.
 							
 							<h5>¿tienes dudas? escríbenos:</h5>
 							
-							<form class="col s12">
+							<form class="col s12" action="<?php bloginfo('template_url'); ?>/ajax/contacto.php" method="GET" id="formContacto">
 					      <div class="row">
 					        <div class="input-field col m6 s12">
-					          <input id="last_name" type="text" class="validate">
+					          <input id="last_name" type="text" class="validate" name="nombre" required>
 					          <label for="first_name">Nombre</label>
 					        </div>
 					        <div class="input-field col m6 s12">
-					          <input id="last_name" type="text" class="validate">
+					          <input id="last_name" type="text" class="validate" name="apellido" required>
 					          <label for="last_name">Apellido</label>
 					        </div>
 					      </div><!-- /.row -->
 					      <div class="row">
 					        <div class="input-field col m6 s12">
-					          <input id="email" type="text" class="validate">
+					          <input id="email" type="email" class="validate" name="mail" required>
 					          <label for="email">Email</label>
 					        </div>
 					        <div class="input-field col m6 s12">
-					          <input id="telefono" type="text" class="validate">
+					          <input id="telefono" type="text" class="validate" name="fono" required>
 					          <label for="telefono">Teléfono</label>
 					        </div>
 					      </div><!-- /.row -->
@@ -69,7 +69,7 @@ Estacionamiento a 50 mts.
 					        <div class="col s12">
 					          <div class="row">
 							        <div class="input-field col s12">
-							          <textarea id="textarea1" class="materialize-textarea"></textarea>
+							          <textarea id="textarea1" class="materialize-textarea" name="mensaje" required></textarea>
 							          <label for="textarea1">Mensaje</label>
 							        </div>
 							      </div>

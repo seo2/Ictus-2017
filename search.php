@@ -9,7 +9,7 @@
 				<div class="row">
 					<div class="col l12 s12">
 						<div class="titulo_oscuro">
-							Noticias <span>Destacadas</span>
+							Resultado de la búsqueda: <span><?php echo $_GET['s']; ?></span>
 						</div><!-- ./titulo -->
 					</div><!-- /.col -->
 				</div><!-- ./row -->
@@ -53,23 +53,7 @@
 			
 			</div><!-- ./row -->
 			
-			<div>
-				<?php if(function_exists('wp_paginate')){
-						wp_paginate();
-					}
-      			?>  
-<!--
-				<ul class="pagination center">
-				    <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-				    <li class="active"><a href="#!">1</a></li>
-				    <li class="waves-effect"><a href="#!">2</a></li>
-				    <li class="waves-effect"><a href="#!">3</a></li>
-				    <li class="waves-effect"><a href="#!">4</a></li>
-				    <li class="waves-effect"><a href="#!">5</a></li>
-				    <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
-				</ul>
--->
-			</div>
+
 			
 		</div><!-- /.container -->
   </main>

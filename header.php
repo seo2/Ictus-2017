@@ -6,7 +6,7 @@
   
   <?php wp_head(); ?>
   
-  <link rel="shortcut icon" href="assets/img/favicon.ico" />
+  <link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/assets/img/favicon.ico" />
   
 </head>
 <body data-spy="scroll"  data-target=".ajustar_menu">
@@ -20,7 +20,7 @@
 		  <div class="ajustar_menu">
 		  	<nav role="navigation" class="menu">
 		      <div class="nav-wrapper container">
-		        <a id="logo-container" href="index.html" class="brand-logo left"><img src="<?php bloginfo('template_url'); ?>/assets/img/logo_ictus_horizontal.png" class="retina" alt="Teatro Ictus"/></a>
+		        <a id="logo-container" href="<?php bloginfo('url'); ?>" class="brand-logo left"><img src="<?php bloginfo('template_url'); ?>/assets/img/logo_ictus_horizontal.png" class="retina" alt="Teatro Ictus"/></a>
 		        
 		        <ul class="right hide-on-med-and-down">
 		          	<li><a href="<?php bloginfo('url'); ?>" target="_self" <?php if(is_home()){ ?>class="active"<?php } ?>>Portada</a></li>

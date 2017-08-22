@@ -16,13 +16,14 @@
 	        			$idprograma = get_the_ID();	
 				?>			
 				<div class="item banner_item">
-					<a href="noticia.html" target="_self" class="banner_item_post">
+					<?php if(get('texto_rojo')){ ?>
+					<?php if(get('enlace')){ ?><a href="<?php echo get('enlace'); ?>" <?php if(get('enlace_externo')){ ?>target="_blank"<?php } ?> class="banner_item_post"><?php } ?>
 						<h5><?php the_title(); ?></h5><!-- limitar a 50 caracteres -->
-	            	</a><!-- /.banner_item_post -->
-					<a href="noticia.html" target="_self">
-<!-- 						<img src="<?php bloginfo('template_url'); ?>/assets/img/banner_edgardo_bruna.jpg" class="responsive-img"/> -->
+	            	<?php if(get('enlace')){ ?></a><!-- /.banner_item_post --><?php } ?>
+	            	<?php } ?>
+					<?php if(get('enlace')){ ?><a href="<?php echo get('enlace'); ?>" <?php if(get('enlace_externo')){ ?>target="_blank"<?php } ?>><?php } ?>
 						<?php the_post_thumbnail('slider-home', array( 'class' => 'img-responsive' ) ); ?>
-					</a><!-- proporción 1600x600 --> <!-- dejar opcional link, _self o _blank -->
+					<?php if(get('enlace')){ ?></a><!-- proporción 1600x600 --> <!-- dejar opcional link, _self o _blank --><?php } ?>
 				</div><!-- /.banner_item -->
 				<?php 		
 	        			$e++;
@@ -114,42 +115,7 @@
 				
 				<div class="col l4 m6 s12">
 					<div class="section">
-						<div class="calendario">
-							<h5>Calendario</h5>
-							<div id="mini-clndr">
-							  <script id="mini-clndr-template" type="text/template">
-							    <div class="controls">
-							      <div class="clndr-previous-button">&lsaquo;</div><div class="month"><%= month %> <%= year %></div><div class="clndr-next-button">&rsaquo;</div>
-							    </div>
-							
-							    <div class="days-container">
-							      <div class="days">
-							        <div class="headers">
-							          <% _.each(daysOfTheWeek, function(day) { %><div class="day-header"><%= day %></div><% }); %>
-							        </div>
-							        <% _.each(days, function(day) { %><div class="<%= day.classes %>" id="<%= day.id %>"><%= day.day %></div><% }); %>
-							      </div>
-							      <div class="events">
-							        <div class="headers">
-							          <div class="x-button">x</div>
-							          <div class="event-header">CARTELERA</div>
-							        </div>
-									<div class="events-list"> 
-										<% _.each(eventsThisMonth, function(event) { %> 
-											<div class="event eventday event-<%=moment(event.date).format('YYYY-MM-DD')%>"> 
-												<a href="<%= event.location %>"><%= moment(event.date).format('DD/MM') %> - <%= event.title %><br> <%= event.location %></a> 
-																							
-												
-												
-											</div> 
-										<% }); %> 
-										</div>							        
-						      		</div>
-							    </div>
-							
-							  </script>
-							</div>								
-						</div><!-- /.calendario -->
+						<?php include('include-calendario.php'); ?>
 					</div><!-- /.section -->
 				</div><!-- /.col -->
 			</div><!-- /.row -->
@@ -196,7 +162,7 @@
 			
 		</div><!-- /.container -->
 			
-		<div class="container-fluid bg_gray">
+		<div class="container-fluid bg_grey">
 			<div class="container">
 				<div class="section">
 					<div class="row">
@@ -269,7 +235,7 @@
 				$horarios = get_order_group('fechas_dia');
 				foreach($horarios as $horario){   
 	?>        
-    { date: '<?php echo  get('fechas_dia',$horario); ?>', title: '<?php echo $title; ?>', location: '<?php echo  get('fechas_horario',$horario); ?> <?php echo  get('fechas_precio',$horario); ?>' },
+    { id: '<?php echo get_the_id(); ?>', date: '<?php echo  get('fechas_dia',$horario); ?>', title: '<?php echo $title; ?>', location: '<?php echo  get('fechas_horario',$horario); ?> <?php echo  get('fechas_precio',$horario); ?>' },
 	  <?php 
 		  }	
         endwhile; 
