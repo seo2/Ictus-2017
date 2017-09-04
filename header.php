@@ -7,7 +7,16 @@
   <?php wp_head(); ?>
   
   <link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/assets/img/favicon.ico" />
-  
+      <script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	
+	  ga('create', 'UA-3239640-13', 'auto');
+	  ga('send', 'pageview');
+	
+	</script>
 </head>
 <body data-spy="scroll"  data-target=".ajustar_menu">
 	
@@ -26,9 +35,9 @@
 		          	<li><a href="<?php bloginfo('url'); ?>" target="_self" <?php if(is_home()){ ?>class="active"<?php } ?>>Portada</a></li>
 		          	<li><a href="<?php bloginfo('url'); ?>/cartelera" target="_self" <?php if(is_post_type_archive('cartelera')){ ?>class="active"<?php } ?>>Cartelera</a></li>
 		          	<li><a href="<?php bloginfo('url'); ?>/category/noticia" target="_self" <?php if(is_category('noticia')){ ?>class="active"<?php } ?>>Noticias</a></li>
-		          	<li><a href="<?php bloginfo('url'); ?>/ictus-60-anos" target="_self"  <?php if(is_page('ictus-60-anos')){ ?> class="active"<?php } ?>>Historia</a></li>
+		          	<li><a href="<?php bloginfo('url'); ?>/historia" target="_self"  <?php if(is_page('historia')){ ?> class="active"<?php } ?>>Historia</a></li>
 <!-- 		          	<li><a href="biblioteca.html" target="_self" class="">Biblioteca</a></li> -->
-		          	<li><a href="<?php bloginfo('url'); ?>/equipo" target="_self" <?php if(is_page('equipo')){ ?> class="active"<?php } ?>>Equipo</a></li>
+<!-- 		          	<li><a href="<?php bloginfo('url'); ?>/equipo" target="_self" <?php if(is_page('equipo')){ ?> class="active"<?php } ?>>Equipo</a></li> -->
 		          	<li><a href="<?php bloginfo('url'); ?>/contacto" target="_self" <?php if(is_page('contacto')){ ?> class="active"<?php } ?>>Contacto</a></li>
 		          	<li><a href="<?php bloginfo('url'); ?>/transparencia" target="_self" <?php if(is_page('transparencia')){ ?> class="active"<?php } ?>>Transparencia</a></li>
 		          	<li><a href="https://www.facebook.com/Teatro-Ictus-254680174566051/" target="_blank"><i class="fa fa-facebook"></i></a></li>
@@ -40,11 +49,11 @@
 		        <ul id="nav-mobile" class="side-nav">
 			        <li><img src="<?php bloginfo('template_url'); ?>/assets/img/logo_ictus_gray.png" width="78" height="50" style="margin: 40px 0 20px 0" alt="Teatro Ictus"/></li>
 		          	<li><a href="<?php bloginfo('url'); ?>" target="_self" <?php if(is_home()){ ?>class="active"<?php } ?>>Portada</a></li>
-				  	<li><a href="<?php bloginfo('url'); ?>/cartelera" target="_self" <?php if(is_post_type_archive('cartelera')){ ?>class="active"<?php } ?>>Cartelera</a></li>
+								<li><a href="<?php bloginfo('url'); ?>/cartelera" target="_self" <?php if(is_post_type_archive('cartelera')){ ?>class="active"<?php } ?>>Cartelera</a></li>
 		          	<li><a href="<?php bloginfo('url'); ?>/category/noticia" target="_self" <?php if(is_category('noticia')){ ?>class="active"<?php } ?>>Noticias</a></li>
 		          	<li><a href="<?php bloginfo('url'); ?>/ictus-60-anos" target="_self"  <?php if(is_page('ictus-60-anos')){ ?> class="active"<?php } ?>>Historia</a></li>
 <!-- 		          	<li><a href="biblioteca.html" target="_self" class="">Biblioteca</a></li> -->
-		          	<li><a href="<?php bloginfo('url'); ?>/equipo" target="_self" <?php if(is_page('equipo')){ ?> class="active"<?php } ?>>Equipo</a></li>
+<!-- 		          	<li><a href="<?php bloginfo('url'); ?>/equipo" target="_self" <?php if(is_page('equipo')){ ?> class="active"<?php } ?>>Equipo</a></li> -->
 				  	<li><a href="<?php bloginfo('url'); ?>/contacto" target="_self" <?php if(is_page('contacto')){ ?> class="active"<?php } ?>>Contacto</a></li>
 		          	<li><a href="<?php bloginfo('url'); ?>/transparencia" target="_self" <?php if(is_page('transparencia')){ ?> class="active"<?php } ?>>Transparencia</a></li>
 		          	<li class="redes_sociales">

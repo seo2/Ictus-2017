@@ -4,7 +4,7 @@
 	  <div class="container">
 		  <div class="row">
 	    	<div class="col s12">
-	      	<div id="owl-demo" class="owl-carousel">
+	      	<div id="owl-demo" class="owl-carousel hide-on-small-only">
 	   			<?php
 			        $originales = array(
 				        'post_type' => 'slider_home'
@@ -40,7 +40,8 @@
 				<div class="row">
 					<div class="col l12">
 						<div class="titulo_oscuro">
-							Teatro Ictus <span> Cartelera</span>
+							<!-- Teatro Ictus <span> Cartelera</span> -->
+							Cartelera <span> Sala La Comedia</span>
 						</div><!-- ./titulo -->
 					</div><!-- /.col -->
 				</div><!-- ./row -->
@@ -50,9 +51,13 @@
 				<div class="col l8 m6">
 
 	   			<?php
+		   			
+		   			$sticky = get_option( 'sticky_posts' );
 			        $originales = array(
 				        'post_type' => 'cartelera',
-						'posts_per_page' => 1
+				        'post__in' => get_option( 'sticky_posts' ),
+						'posts_per_page' => 1,
+						'ignore_sticky_posts' => 1
 			        );
 			        $query = new WP_Query( $originales ); 
 					$e = 0;
@@ -64,7 +69,7 @@
 					<div class="section">	
 						<div class="row">
 							<div class="col l6">
-								<?php the_post_thumbnail('noticias', array( 'class' => 'responsive-img' ) ); ?>
+								<?php the_post_thumbnail('full', array( 'class' => 'responsive-img' ) ); ?>
 							</div>
 							<div class="col l6 post_noticia_lg">
 									<h5><?php the_title(); ?></h5>
@@ -85,7 +90,7 @@
 			        $originales = array(
 				        'post_type' => 'cartelera',
 						'posts_per_page' => 1,
-						'offset' => 1
+						'post__not_in' => get_option( 'sticky_posts' )
 			        );
 			        $query = new WP_Query( $originales ); 
 					$e = 0;
@@ -96,7 +101,7 @@
 					<div class="section">
 						<div class="row">
 								<div class="col l6 push-l6 s12">
-									<?php the_post_thumbnail('noticias', array( 'class' => 'responsive-img' ) ); ?>
+									<?php the_post_thumbnail('full', array( 'class' => 'responsive-img' ) ); ?>
 								</div>
 								<div class="col l6 pull-l6 s12 post_noticia_lg">
 									<h5><?php the_title(); ?></h5>
@@ -126,7 +131,7 @@
 				<div class="row">
 					<div class="col l12">
 						<div class="titulo_oscuro">
-							Noticias <span>Destacadas</span>
+							Noticias <span>Teatro Ictus</span>
 						</div><!-- ./titulo -->
 					</div><!-- /.col -->
 				</div><!-- ./row -->
@@ -162,7 +167,7 @@
 			
 		</div><!-- /.container -->
 			
-		<div class="container-fluid bg_grey">
+		<div class="container-fluid bg_grey hide">
 			<div class="container">
 				<div class="section">
 					<div class="row">

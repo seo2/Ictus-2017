@@ -7,7 +7,7 @@
 				<div class="row">
 					<div class="col l12">
 						<div class="titulo_oscuro">
-							Teatro Ictus <span> Cartelera</span>
+							Cartelera <span> Sala La Comedia</span>
 						</div><!-- ./titulo -->
 					</div><!-- /.col -->
 				</div><!-- ./row -->
@@ -27,12 +27,14 @@
 						<div id="cartelera<?php echo get_the_id(); ?>" style="padding-top: 100px; margin-top: -100px;"></div>	
 						<div class="row">
 							<div class="col l6">
-								<?php the_post_thumbnail('noticias', array( 'class' => 'responsive-img' ) ); ?>
+								<?php the_post_thumbnail('full', array( 'class' => 'responsive-img' ) ); ?>
 							</div>
 							<div class="col l6 post_noticia_lg">
 								<h5><?php the_title(); ?></h5>
 								<?php the_content(); ?>
-								<a href="<?php echo get('enlace');?>" target="_self" class="btn_rojo">Comprar Entradas</a>
+								<?php if(get('enlace')){ ?>
+								<a href="<?php echo get('enlace');?>" target="_blank" class="btn_rojo">Más información</a>
+								<?php } ?>
 							</div>
 						</div><!-- /.row -->
 					</div><!-- /.section -->
@@ -43,12 +45,14 @@
 						<div id="cartelera<?php echo get_the_id(); ?>" style="padding-top: 100px; margin-top: -100px;"></div>	
 						<div class="row">
 							<div class="col l6 push-l6 s12">
-								<?php the_post_thumbnail('noticias', array( 'class' => 'responsive-img' ) ); ?>
+								<?php the_post_thumbnail('full', array( 'class' => 'responsive-img' ) ); ?>
 							</div>
 							<div class="col l6 pull-l6 s12 post_noticia_lg">
 								<h5><?php the_title(); ?></h5>
 								<?php the_content(); ?>
-								<a href="<?php echo get('enlace');?>" target="_self" class="btn_rojo">Comprar Entradas</a>
+								<? if(get('enlace')){ ?>
+								<a href="<?php echo get('enlace');?>" target="_blank" class="btn_rojo">Más información</a>
+								<? } ?>
 							</div>
 						</div><!-- /.row -->
 					</div><!-- /.section -->

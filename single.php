@@ -29,7 +29,7 @@
 				<div class="col l10 offset-l1 s12">
 					<div class="post_noticia_interior">
 						
-						<div id="owl-demo" class="owl-carousel">
+						<div id="owl-demo" class="galeriafotos owl-carousel">
 							<div class="item banner_item">
 								<?php the_post_thumbnail('noticias', array( 'class' => 'responsive-img' ) ); ?>
 							</div><!-- /.banner_item -->
